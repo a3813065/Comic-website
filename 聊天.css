@@ -1,0 +1,59 @@
+
+.chatbox {
+    width: 80%; /* 設置聊天框寬度，可以根據需求調整 */
+    max-width: 800px; /* 設置最大寬度 */
+    margin: 0 auto; /* 讓聊天框居中顯示 */
+    border: 1px solid #ccc; /* 添加邊框 */
+    padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+    }
+
+    .chat-window {
+        height: 400px; /* 設置聊天區域的高度 */
+        overflow-y: auto; /* 使聊天區域可滾動 */
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    #chatForm {
+        display: flex;
+        gap: 10px;
+    }
+
+    #message {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 8px 16px;
+        background-color: white;
+        color: blue;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: rgba(236, 10, 10, 0);
+    }
+
+    #pagination {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .message {
+        padding: 5px 0;
+    }
+
+    .message strong {
+        color: #333;
+}
+

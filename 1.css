@@ -1,0 +1,55 @@
+.pagination {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    margin-top: 20px;         /* 可以调整与内容的距离 */
+}
+
+.pagination a {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+.goto-page {
+    display: flex;                  /* 使用 flexbox 布局 */
+    justify-content: center;        /* 水平居中 */
+    margin-top: 20px;              /* 与分页按钮之间的间距 */
+}
+
+.goto-page input[type="number"] {
+    width: 60px;                   /* 输入框宽度 */
+    padding: 10px;                 /* 内边距 */
+    margin-right: 10px;            /* 输入框和按钮之间的间距 */
+    border: 1px solid #ccc;        /* 边框样式，与按钮一致 */
+    border-radius: 5px;            /* 圆角 */
+}
+
+.goto-page button {
+    padding: 10px 20px;            /* 按钮内边距 */
+    background-color: #f1f1f1;     /* 按钮背景颜色，与分页按钮一致 */
+    color: #333;                    /* 按钮文字颜色 */
+    border: 1px solid #ccc;         /* 边框样式，与分页按钮一致 */
+    border-radius: 5px;             /* 圆角 */
+    cursor: pointer;                /* 鼠标悬停效果 */
+}
+
+.goto-page button:hover {
+    background-color: #ddd;         /* 悬停时改变背景颜色，与分页按钮一致 */
+}
+
+
+
+/* 媒体查询（可选）*/
+@media (max-width: 600px) {
+   .content {
+       padding-top: 60px;           /* 在小屏幕上调整内边距 */
+   }
+}

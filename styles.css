@@ -1,0 +1,177 @@
+/* Navbar 固定在頁面頂部 */
+.navbar {
+    position: fixed;                /* 使導航條固定 */
+    top: 0;                         /* 鎖定在頂部 */
+    left: 0;                        /* 鎖定在左側 */
+    width: 100%;                    /* 寬度為 100% */
+    height: 80px;                   /* 設置固定高度 */
+    background-color: rgba(236, 10, 10, 0);  /* 背景顏色 */
+    color: blue;                    /* 字體顏色 */
+    z-index: 1;                     /* 設置較低的 z-index */
+    text-align: center;             /* 使文字置中 */
+    display: none;                  /* 默認隱藏導航條 */
+}
+
+/* 當螢幕寬度小於600px時隱藏標題 */
+
+/* Navbar 內部 h1 */
+.navbar h1 {
+    color: black;
+    margin: 0;
+    line-height: 80px;             /* 與導航條高度一致的行高 */
+    background-image: url(/image/8.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;          /* 推飛文字 */
+}
+
+/* Navbar 右側選單 */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;             /* 使用絕對定位 */
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);    /* 垂直居中 */
+}
+
+.navbar li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: blue;
+    text-decoration: none;
+}
+
+/* 內容區塊 */
+.content {
+    display: flex;                  /* 使用 flexbox 布局 */
+    flex-direction: column;         /* 垂直排列子元素 */
+    align-items: center;            /* 水平居中对齐 */
+    padding-top: 80px;              /* 确保有足够的内边距以避免被导航条覆盖 */
+}
+
+/* 漫畫項目 */
+.comic-item {
+    width: calc(33.333% - 20px);      /* 每個項目占 3 分之一寬度，減去間距 */
+    display: flex;                    /* 使用 flexbox 來排列子元素 */
+    flex-direction: column;           /* 垂直排列元素 */
+    align-items: center;              /* 水平居中 */
+    text-align: center;               /* 文字居中 */
+    margin-bottom: 20px;              /* 每個漫畫項目的間距 */
+}
+
+/* 漫畫項目圖片樣式 */
+.comic-item img {
+    width: 120px;                     /* 固定圖片寬度 */
+    height: auto;                     /* 高度自適應 */
+    margin-bottom: 10px;              /* 圖片與下方元素（標題、按鈕）的間距 */
+}
+
+/* 標題樣式 */
+.comic-item h2 {
+    margin: 0;                        /* 去除標題的外邊距 */
+    margin-bottom: 10px;              /* 標題與按鈕的間距 */
+}
+
+/* 漫畫影片容器 */
+.comic-item .video-container {
+    width: 100%;                     /* 容器寬度 100% */
+    max-width: 300px;                /* 容器最大寬度 300px（可調整） */
+    height: 200px;                   /* 設置容器高度 */
+    overflow: hidden;                /* 隱藏溢出內容 */
+    display: flex;
+    justify-content: center;         /* 水平居中顯示影片 */
+    align-items: center;             /* 垂直居中顯示影片 */
+    margin-bottom: 10px;             /* 下方間距 */
+}
+
+
+/* 漫畫影片樣式 */
+.comic-item video {
+    width: 100%;                       /* 設定影片寬度為容器的 100% */
+    max-width: 100%;                   /* 最大寬度 100% */
+    height: auto;                      /* 高度自適應 */
+    object-fit: contain;               /* 保持影片比例，避免拉伸或裁剪 */
+    border-radius: 5px;                /* 圓角邊框 */
+}
+
+/* 漫畫列表 */
+.comic-list {
+    display: flex;                    /* 使用 flexbox */
+    flex-wrap: wrap;                  /* 允許換行 */
+    justify-content: space-around;    /* 在水平方向上平均分配項目 */
+    gap: 20px;                        /* 設置每列間的間距 */
+}
+
+/* 觀看漫畫按鈕 */
+.view-button {
+    display: inline-block;            /* 使按鈕為行內塊元素 */
+    padding: 8px 12px;                /* 按鈕的內邊距 */
+    color: white;                     /* 按鈕文字顏色 */
+    background-color: blue;           /* 按鈕背景顏色 */
+    text-decoration: none;            /* 去掉按鈕的下劃線 */
+    border-radius: 5px;               /* 按鈕圓角 */
+}
+
+/* 顯示/隱藏標題按鈕 */
+.toggle-btns {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(236, 10, 10, 0);
+    color: blue;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* 切換導航欄顯示/隱藏按鈕 */
+.toggle-btn {
+    position: fixed;
+    top: 0;
+    left: 5%;
+    height: 80px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(236, 10, 10, 0);
+    color: rgba(236, 10, 10, 0);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1500;  /* 確保顯示在 navbar 之上 */
+}
+
+.comic-title {
+    display: none;  /* 初始狀態為隱藏 */
+}
+
+/* 隱藏導航欄 */
+.navbar.hidden {
+    display: none;
+}
+@media (max-width: 600px) {
+    /* 優化影片大小 */
+    .comic-item .video-container {
+        width: 100%;  /* 確保容器寬度為 100% */
+        height: auto; /* 高度自適應 */
+        max-width: 100%;  /* 最大寬度為 100% */
+    }
+
+    /* 優化影片自適應大小 */
+    .comic-item video {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    .navbar h1 {
+        display: none;  /* 隱藏 h1 標題 */
+    }
+
+}
